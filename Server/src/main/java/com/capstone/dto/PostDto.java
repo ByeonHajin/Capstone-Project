@@ -1,9 +1,11 @@
 package com.capstone.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.time.LocalDateTime;
 
+import lombok.Getter;
+
+@Getter
 public class PostDto {
     private int pId;
     @JsonProperty("title")
@@ -21,6 +23,7 @@ public class PostDto {
     @JsonProperty("r_id")
     private int rId;
 
+
     @Override
     public String toString() {
         return "PostDto{" +
@@ -30,9 +33,8 @@ public class PostDto {
                 ", postTime='" + postTime + '\'' +
                 ", shootingUser='" + shootingUser + '\'' +
                 ", pLocation='" + pLocation + '\'' +
-                ", uId='" + uId + '\'' +
-                ", rId='" + rId + '\'' +
+                ", uId=" + uId +
+                ", rId=" + rId +
                 '}';
     }
-
 }

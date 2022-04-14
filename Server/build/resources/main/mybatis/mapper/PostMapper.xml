@@ -13,7 +13,4 @@
         select * from post;
     </select>
 
-    <insert id="createPost">
-        INSERT INTO post (title, order_time, post_time, shooting_user, p_location, u_id, r_id) VALUES (#{title}, #{orderTime}, #{postTime}, #{shootingUser}, #{pLocation}, #{uId}, #{rId})
-    </insert>
 </mapper>
