@@ -21,4 +21,7 @@ public class PostServiceImpl {
     public List<PostDto> getPostAll(){
         return postMapper.getPostAll();
     }
+    public void createPost(PostDto postDto) {
+        postMapper.createPost(postDto);
+    }
 }

@@ -6,4 +6,5 @@ import java.util.List;
 public interface PostService {
     List<PostDto> getPostCategory(String category);
     List<PostDto> getPostAll();
+    void createPost(PostDto postDto);
 }

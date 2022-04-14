@@ -8,4 +8,5 @@ import java.util.List;
 public interface PostMapper {
     public List<PostDto> getPostCategory(String category);
     public List<PostDto> getPostAll();
+    public void createPost(PostDto postDto);
 }
