@@ -1,2 +1,2 @@
 .DS_Store
-./idea/*
+Server/src/main/resources/application.properties
