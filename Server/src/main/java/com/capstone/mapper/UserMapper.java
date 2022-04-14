@@ -1,11 +1,9 @@
 package com.capstone.mapper;
 
+import com.capstone.dto.UserDto;
 import org.apache.ibatis.annotations.Mapper;
-
-import java.util.List;
-import java.util.Map;
 
 @Mapper
 public interface UserMapper {
-    public List<Map<String,Object>> getUsers();
+    public void insertUser(UserDto userDto);
 }

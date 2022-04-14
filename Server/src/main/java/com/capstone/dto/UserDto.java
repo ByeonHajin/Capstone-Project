@@ -1,5 +1,8 @@
 package com.capstone.dto;
 
+import lombok.Getter;
+
+@Getter
 public class UserDto {
     private Long uId;
     private String pw;
