@@ -1,2 +1,3 @@
 Server/src/main/resources/application.properties
 *.properties
+Client/node_modules/
