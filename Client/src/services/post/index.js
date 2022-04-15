@@ -8,11 +8,10 @@ export const postData = async(postData) => {
     const restaurant = postData.restaurant;
 
     try {
-        console.log(postData);
         const response = await axios.post(POST_BASE_URL, {
             title: '1',
-            order_time: '2',
-            post_time: '2',
+            order_time: '2022-04-14T13:44:30.327959',
+            post_time: '2022-04-14T13:44:30.327959',
             shooting_user: '2',
             p_location: '2',
             u_id: 1,
