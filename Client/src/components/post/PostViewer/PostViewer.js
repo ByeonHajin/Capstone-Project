@@ -1,13 +1,21 @@
 import React, { useState, Component } from "react";
+import { postData } from "../../../containers/services/post";
 import { PostContainer, BoxCotainer, PostButton, RestCotainer, Fee } from "./styles";
 
 const PostInput = () => {
-    //const [title, setTitle] = useState<string>("");
-    //const [restaurant, setRestaurant] = useState<string>("");
-    //const [category, setCategory] = useState<int>(0);
-    //const [minPrice, setMinPrice] = useState<int>(null);
-    //const [orderTime, setOrderTime] = useState<string>("");
+    //const [title, setTitle] = useState("");
+    //const [restaurant, setRestaurant] = useState("");
+    //const [category, setCategory] = useState(0);
+    //const [minPrice, setMinPrice] = useState(null);
+    //const [orderTime, setOrderTime] = useState("");
 
+    const [inputs, setInputs] = useState({
+        title: '',
+        restaurant: ''
+    })
+
+    const { title, restaurant } = inputs;
+    
     const [orderFee, setOrderFee] = useState({
         order: '',
         fee: ''
@@ -38,18 +46,37 @@ const PostInput = () => {
         setList(list => [...list, orderFee.order + '원 이상 ' + orderFee.fee + '원']);
     }
 
+    const onPublish = () => {
+        postData(inputs);
+    }
+
+    const onChange = (e) => {
+        const { name, value } = e.target;
+
+        setInputs({
+            ...inputs,
+            [name]: value
+        });
+    }
+
     return (
         <PostContainer>
             <BoxCotainer>
                 <div>제목</div>
                 <input
                     placeholder="제목을 입력해주세요"
+                    name="title"
+                    value={title}
+                    onChange={onChange}
                 />
             </BoxCotainer>
             <BoxCotainer>
                 <div>매장</div>
                 <input
                     placeholder="매장을 입력해주세요"
+                    name="restaurant"
+                    value={restaurant}
+                    onChange={onChange}
                 />
             </BoxCotainer>
             <RestCotainer>
@@ -100,7 +127,7 @@ const PostInput = () => {
                     type="time"
                 />
             </BoxCotainer>
-            <PostButton onClick={() => alert("등록완료")}>
+            <PostButton onClick={onPublish}>
                 등록하기
             </PostButton>
         </PostContainer>
