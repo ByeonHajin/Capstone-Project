@@ -20,7 +20,7 @@ export const postData = async(postData) => {
             p_location: '2',
             u_id: 1,
             r_id: 1,
-        }, {headers:headers}, {withCredentials: false});
+        }, {headers:headers}, {withCredentials: false})
         console.log(response);
     } catch(error) {
         console.error(error);
