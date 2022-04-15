@@ -1,5 +1,5 @@
 import React, { useState, Component } from "react";
-import { postData } from "../../../containers/services/post";
+import { postData } from "../../../services/post";
 import { PostContainer, BoxCotainer, PostButton, RestCotainer, Fee } from "./styles";
 
 const PostInput = () => {
@@ -17,7 +17,7 @@ const PostInput = () => {
     const { title, restaurant } = inputs;
     
     const [orderFee, setOrderFee] = useState({
-        order: '',
+        order: '', 
         fee: ''
     });
 
