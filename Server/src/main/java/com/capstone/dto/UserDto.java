@@ -7,6 +7,7 @@ public class UserDto {
     private Long uId;
     private String pw;
     private String name;
+    private String bank;
     private String account;
     private String location;
     private String phone;
@@ -17,6 +18,7 @@ public class UserDto {
                 "uId=" + uId +
                 ", pw='" + pw + '\'' +
                 ", name='" + name + '\'' +
+                ", bank='" + bank + '\'' +
                 ", account='" + account + '\'' +
                 ", location='" + location + '\'' +
                 ", phone='" + phone + '\'' +

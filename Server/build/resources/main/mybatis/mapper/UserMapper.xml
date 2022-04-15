@@ -9,6 +9,7 @@
         u_id
         , pw
 		, name
+        , bank
 		, account
 		, location
 		, phone
@@ -23,6 +24,7 @@
         NULL
         , #{pw}
         , #{name}
+        , #{bank}
         , #{account}
         , #{location}
         , #{phone}
