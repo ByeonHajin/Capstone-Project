@@ -10,7 +10,7 @@ export const postData = async(inputData, postTime) => {
     try {
         const response = await axios.post(POST_BASE_URL, {
             title: inputData.title,
-            order_time: inputData.order_time,
+            order_time: inputData.orderTime,
             post_time: postTime,
             shooting_user: null,
             p_location: inputData.restaurant,
