@@ -3,18 +3,13 @@ import { postData } from "../../../services/post";
 import { PostContainer, BoxCotainer, PostButton, RestCotainer, Fee } from "./styles";
 
 const PostInput = () => {
-    //const [title, setTitle] = useState("");
-    //const [restaurant, setRestaurant] = useState("");
-    //const [category, setCategory] = useState(0);
-    //const [minPrice, setMinPrice] = useState(null);
-    //const [orderTime, setOrderTime] = useState("");
-
     const [inputs, setInputs] = useState({
         title: '',
+        orderTime: '',
         restaurant: ''
     })
 
-    const { title, restaurant } = inputs;
+    const { title, orderTime, postTime, restaurant } = inputs;
     
     const [orderFee, setOrderFee] = useState({
         order: '', 
@@ -33,6 +28,15 @@ const PostInput = () => {
         });
     }
 
+    const onChange = (e) => {
+        const { name, value } = e.target;
+
+        setInputs({
+            ...inputs,
+            [name]: value
+        });
+    }
+
     const onTextReset = () => {
         setOrderFee({
             order: '',
@@ -47,16 +51,9 @@ const PostInput = () => {
     }
 
     const onPublish = () => {
-        postData(inputs);
-    }
-
-    const onChange = (e) => {
-        const { name, value } = e.target;
-
-        setInputs({
-            ...inputs,
-            [name]: value
-        });
+        const time = new Date().toISOString();
+        
+        postData(inputs, time);
     }
 
     return (
@@ -125,6 +122,9 @@ const PostInput = () => {
                 <div>주문예정시간</div>
                 <input
                     type="time"
+                    name="orderTime"
+                    value={orderTime}
+                    onChange={onChange}
                 />
             </BoxCotainer>
             <PostButton onClick={onPublish}>
